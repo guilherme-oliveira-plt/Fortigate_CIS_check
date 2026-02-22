@@ -1,0 +1,9 @@
+2026-02-22 13:47:24,198 - INFO - Starting CIS audit: test_file.txt
+2026-02-22 13:47:24,202 - INFO - Loaded config: test_file.txt (331.5KB)
+2026-02-22 13:47:24,238 - INFO - Parsed config: model=FG100D, version=5.04, hostname=FG100D3G16815807, blocks=194
+2026-02-22 13:47:24,238 - INFO - Parsed config: model=FG100D, version=5.04, hostname=FG100D3G16815807
+2026-02-22 13:47:24,239 - INFO - Evaluating 54 rules (Level: all)
+2026-02-22 13:47:24,385 - INFO - HTML report saved: reports\CIS_Audit_test_file_20260222_134724.html
+2026-02-22 13:47:24,387 - INFO - JSON report saved: reports\CIS_Audit_test_file_20260222_134724.json
+2026-02-22 13:47:24,389 - INFO - Remediation script saved: reports\Remediation_test_file_20260222_134724.txt
+2026-02-22 13:47:24,389 - INFO - Audit complete
