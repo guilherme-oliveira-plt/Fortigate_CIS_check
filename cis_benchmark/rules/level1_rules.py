@@ -115,13 +115,13 @@ def _eval_hostname(rule, config):
 
 
 def _eval_usb_disable(rule, config):
-    val = config.get_global_setting("usb-auto-install", "")
+    val = config.get_auto_install_setting("auto-install-config", "")
     if val.lower() == "disable":
-        return rule._make_result(True, "USB auto-install disabled")
+	return rule._make_result(True, "auto-install disabled")
     # If not explicitly set, FortiGate defaults to enable
     if not val:
-        return rule._make_result(False, "usb-auto-install not explicitly set (defaults to enable)")
-    return rule._make_result(False, f"usb-auto-install: {val}")
+	return rule._make_result(False, "auto-install-config not explicitly set (defaults to enable)")
+     return rule._make_result(False, f"auto-install-config: {val}")
 
 
 def _eval_static_keys_tls(rule, config):
@@ -465,10 +465,10 @@ def get_level1_rules() -> List[CISRule]:
             title="Ensure USB firmware and configuration installation is disabled",
             level=L1, severity=RuleSeverity.HIGH,
             description="USB auto-install should be disabled to prevent unauthorized firmware changes.",
-            expected_value="usb-auto-install: disable",
+	    expected_value="auto-install-config: disable",
             remediation="Disable USB auto-install in system global",
             category="System", cis_section="2.1.7",
-            remediation_cli="config system global\n  set usb-auto-install disable\nend",
+	    remediation_cli="config system auto-install\n  set auto-install-config disable\nend",
         ),
         CallableCISRule(
             _eval_static_keys_tls,

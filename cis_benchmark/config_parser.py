@@ -63,6 +63,12 @@ class FortiGateConfig:
             return block.get(key, default)
         return default
 
+    def get_auto_install_setting(self, key: str, default: str = "") -> str:
+        block = self.get_block("system auto-install")
+        if block:
+            return block.get(key, default)
+        return default
+
     def has_global_setting(self, key: str) -> bool:
         block = self.get_block("system global")
         return block.has(key) if block else False
